@@ -20,6 +20,10 @@ describe('Pruebas en demo', () => {
     test(`Validar código ${CP.valid}`,()=>{
         expect(codigoPostal(CP.valid)).toBe(CP.valid)
     })
+
+    test(`Validar que el código con espacios lo retorne sin espacios`,()=>{
+        expect(codigoPostal(' 11111 ')).toBe(`11111`)
+    })
     
     test('Validar si el código es inválido',()=>{
         //Aserción

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { HeaderComponent } from '.';
+import { increment } from './helpers/increment';
 
 export const AppProdDrilling = () => {
   const [counter, setCounter] = useState(0);
 
   const handleIncrement = () => {
-    setCounter(counter+1);
+    //setCounter(value=>value+1);
+    //setCounter(counter+1)
+    //Esta función sobra pero lo utilizamos para probar jest
+    const value = increment(counter);
+    setCounter(value);
   }
   return (
     <div style={{backgroundColor: 'tomato'}}>
